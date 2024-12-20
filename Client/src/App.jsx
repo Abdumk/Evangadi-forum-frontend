@@ -15,17 +15,17 @@ function App() {
     try {
       const token = localStorage.getItem("EV-Forum-token-G3-APR2024"); // Get the token stored during login from local storage
       if (!token) {
-        navigate("/auth");
+        navigate("/Evangadi-forum-frontend/auth");
       }
 
       const userData = await axiosInstance
-        .get("/users/check", { headers: { Authorization: "Bearer " + token } })
+        .get("/Evangadi-forum-frontend/users/check", { headers: { Authorization: "Bearer " + token } })
         .then((response) => response.data);
       console.log(userData);
       setUser(userData); // Store the user data in state so that it can be accessed by others too
     } catch (error) {
       console.log(error);
-      navigate("/auth");
+      navigate("/Evangadi-forum-frontend/auth");
     }
   };
 
