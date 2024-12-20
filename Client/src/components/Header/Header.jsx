@@ -12,7 +12,7 @@ function Header() {
 
   const handleSignOut = () => {
     localStorage.removeItem("EV-Forum-token-G3-APR2024"); //remove the auth token
-    window.location.replace("/auth"); //redirect to auth page so that user can login again
+    window.location.replace("/Evangadi-forum-frontend/auth"); //redirect to auth page so that user can login again
   };
 
 
@@ -44,7 +44,7 @@ function Header() {
 
               <Nav.Link
                 as={Link}
-                to="/howitworks"
+                to="/Evangadi-forum-frontend/howitworks"
                 className={classes.navigation_links}
               >
                 How it Works
@@ -60,7 +60,7 @@ function Header() {
              ) : (
                <Nav.Link
                  as={Link}
-                 to="/auth"
+                 to="/Evangadi-forum-frontend/auth"
                  className={`${classes.navigation_links} ${classes.login_btn}`}
                >
                  SIGN IN
