@@ -10,9 +10,10 @@ import AuthLayout from '../Pages/AuthLayout/AuthLayout.jsx'
 import HowItWorks from '../Pages/HowItWorks/HowItWorks.jsx'
 
 function AppRouter() {
+  const homeUrlForGitPage = "Evangadi-forum-frontend"
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      {/* <Route path="/" element={<Home />} />
       <Route path="/ask" element={<AskQuestion />} />
       <Route path="/question/:questionId" element={<QuestionAndAnswer />} />
       <Route path="/howitworks" element={<HowItWorks />} />
@@ -20,7 +21,16 @@ function AppRouter() {
       <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
       <Route path="/auth" element={<AuthLayout />} />
       <Route path="/forgetPass" element={<ForgotPassword />} />
-      <Route path="*" element={<PageNotFound />} />
+      <Route path="*" element={<PageNotFound />} /> */}
+      <Route path={`/${homeUrlForGitPage}`} element={<Home />} />
+      <Route path={`/${homeUrlForGitPage}/ask`} element={<AskQuestion />} />
+      <Route path={`/${homeUrlForGitPage}/question/:questionId`} element={<QuestionAndAnswer />} />
+      <Route path={`/${homeUrlForGitPage}/howitworks`} element={<HowItWorks />} />
+      <Route path={`/${homeUrlForGitPage}/terms`} element={<Terms />} />
+      <Route path={`/${homeUrlForGitPage}/PrivacyPolicy`} element={<PrivacyPolicy />} />
+      <Route path={`/${homeUrlForGitPage}/auth`} element={<AuthLayout />} />
+      <Route path={`/${homeUrlForGitPage}/forgetPass`} element={<ForgotPassword />} />
+      <Route path={`/${homeUrlForGitPage}/*`} element={<PageNotFound />} />
     </Routes>
   );
 }
