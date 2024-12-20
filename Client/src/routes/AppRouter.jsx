@@ -18,9 +18,9 @@ function AppRouter() {
       <Route path="/question/:questionId" element={<QuestionAndAnswer />} />
       <Route path="/howitworks" element={<HowItWorks />} />
       <Route path="/terms" element={<Terms />} />
-      <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+      <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
       <Route path="/auth" element={<AuthLayout />} />
-      <Route path="/forgetPass" element={<ForgotPassword />} />
+      <Route path="/forgetpass" element={<ForgotPassword />} />
       <Route path="*" element={<PageNotFound />} />
   
     </Routes>

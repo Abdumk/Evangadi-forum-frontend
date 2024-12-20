@@ -10,12 +10,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import { writeFileSync, copyFileSync } from 'fs';
-import { ghPages } from 'vite-plugin-gh-pages';
+import { copyFileSync } from 'fs';
 
 export default defineConfig({
-  plugins: [react(), ghPages()],
-  base: '/Evangadi-forum-frontend/', // Your GitHub repository name
+  plugins: [react()],
+  base: '/Evangadi-forum-frontend/',
   build: {
     rollupOptions: {
       input: {
@@ -23,12 +22,9 @@ export default defineConfig({
       },
     },
   },
-  // Post-build script to copy index.html as 404.html
   buildEnd() {
     const distDir = resolve(__dirname, 'dist');
-    const indexFile = resolve(distDir, 'index.html');
-    const notFoundFile = resolve(distDir, '404.html');
-    copyFileSync(indexFile, notFoundFile);
-    console.log('Copied index.html to 404.html for SPA routing on GitHub Pages.');
+    copyFileSync(resolve(distDir, 'index.html'), resolve(distDir, '404.html'));
+    console.log('Copied index.html to 404.html for GitHub Pages.');
   },
 });
