@@ -36,7 +36,7 @@ function Header() {
             <Nav className="flex-column flex-md-row w-100 justify-content-end nav-links-holder">
               {
                 userId ? (
-                  <Nav.Link as={Link} to="/" className={classes.navigation_links}>
+                  <Nav.Link as={Link} to="/Evangadi-forum-frontend" className={classes.navigation_links}>
                   Home
                 </Nav.Link>
                 ) : null
