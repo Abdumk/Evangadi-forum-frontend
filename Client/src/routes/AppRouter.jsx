@@ -10,7 +10,7 @@ import AuthLayout from '../Pages/AuthLayout/AuthLayout.jsx'
 import HowItWorks from '../Pages/HowItWorks/HowItWorks.jsx'
 
 function AppRouter() {
-  const homeUrlForGitPage = "Evangadi-forum-frontend"
+  // const homeUrlForGitPage = "Evangadi-forum-frontend"
   return (
     <Routes>
       <Route path="/" element={<Home />} />
