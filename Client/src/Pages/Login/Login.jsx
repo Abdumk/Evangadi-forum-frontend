@@ -3,10 +3,12 @@ import {axiosInstance} from "../../utility/axios.js";
 import classes from "./login.module.css";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 function Login({ onSwitch }) {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -39,7 +41,7 @@ function Login({ onSwitch }) {
       );
       // console.log(response.data)
       localStorage.setItem("EV-Forum-token-G3-APR2024", response.data.token); // Store the token in local storage
-      window.location.href = "/"; // This will navigate to the / page and refresh the application
+      //window.location.href = "/"; // This will navigate to the / page and refresh the application
       if (response.status === 200) {
         setSuccess("Login successful! Redirecting..."); 
         await Swal.fire({
@@ -49,6 +51,8 @@ function Login({ onSwitch }) {
           confirmButtonText: "OK"
         })
         setError(null);
+        navigate("/", { replace: true }); // Navigate to the base route
+        window.location.reload(); // Refresh the application
       } else {
         setError(response.data.msg || "Login failed.");
         await Swal.fire({
