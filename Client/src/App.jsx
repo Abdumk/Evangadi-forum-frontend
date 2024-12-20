@@ -11,24 +11,41 @@ function App() {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
 
+  // const getUserData = async () => {
+  //   try {
+  //     const token = localStorage.getItem("EV-Forum-token-G3-APR2024"); // Get the token stored during login from local storage
+  //     if (!token) {
+  //       navigate("/auth");
+  //     }
+
+  //     const userData = await axiosInstance
+  //       .get("/users/check", { headers: { Authorization: "Bearer " + token } })
+  //       .then((response) => response.data);
+  //     console.log(userData);
+  //     setUser(userData); // Store the user data in state so that it can be accessed by others too
+  //   } catch (error) {
+  //     console.log(error);
+  //     navigate("/auth");
+  //   }
+  // };
   const getUserData = async () => {
     try {
-      const token = localStorage.getItem("EV-Forum-token-G3-APR2024"); // Get the token stored during login from local storage
+      const token = localStorage.getItem("EV-Forum-token-G3-APR2024");
       if (!token) {
-        navigate("/auth");
+        return navigate("/auth");
       }
-
+  
       const userData = await axiosInstance
-        .get("/users/check", { headers: { Authorization: "Bearer " + token } })
+        .get("/users/check", { headers: { Authorization: `Bearer ${token}` } })
         .then((response) => response.data);
-      console.log(userData);
-      setUser(userData); // Store the user data in state so that it can be accessed by others too
+  
+      setUser(userData);
     } catch (error) {
       console.log(error);
       navigate("/auth");
     }
   };
-
+  
   useEffect(() => {
     getUserData();
   }, []);
