@@ -48,7 +48,7 @@ function QuestionAndAnswer() {
           confirmButtonText: "OK",
         }).then(() => {
           setReload((prev) => !prev);
-
+          answerInput.current.value = "";
          // window.location.reload();
         });
       } else {
