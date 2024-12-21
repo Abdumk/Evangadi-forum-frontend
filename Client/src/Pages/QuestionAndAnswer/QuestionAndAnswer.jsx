@@ -47,8 +47,8 @@ function QuestionAndAnswer() {
           confirmButtonText: "OK",
         }).then(() => {
           navigate(0);
-          
-          //window.location.reload();
+
+          window.location.reload();
         });
       } else {
         Swal.fire({
