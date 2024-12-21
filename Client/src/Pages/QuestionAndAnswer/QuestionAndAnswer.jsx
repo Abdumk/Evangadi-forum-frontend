@@ -21,6 +21,7 @@ function QuestionAndAnswer() {
   const [expandedAnswer, setExpandedAnswer] = useState(null); // State to track expanded answers
   const answerInput = useRef();
   const navigate = useNavigate();
+  const [reload, setReload] = useState(false);
 
   // Fetch the question details
   useEffect(() => {
@@ -28,7 +29,7 @@ function QuestionAndAnswer() {
       setQuestionDetails(res.data);
       setLoading(false); // Set loading false after fetching
     });
-  }, [questionId]);
+  }, [questionId,reload]);
 
   // Post a new answer to the question
   async function handlePostAnswer(e) {
@@ -46,9 +47,9 @@ function QuestionAndAnswer() {
           icon: "success",
           confirmButtonText: "OK",
         }).then(() => {
-          navigate(0);
+          setReload((prev) => !prev);
 
-          window.location.reload();
+         // window.location.reload();
         });
       } else {
         Swal.fire({
