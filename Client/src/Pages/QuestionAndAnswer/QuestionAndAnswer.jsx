@@ -10,6 +10,7 @@ import moment from "moment";
 import { UserState } from "../../App.jsx";
 import { LuCalendarClock } from "react-icons/lu";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function QuestionAndAnswer() {
   const [questionDetails, setQuestionDetails] = useState({});
@@ -19,6 +20,7 @@ function QuestionAndAnswer() {
   const [loading, setLoading] = useState(true);
   const [expandedAnswer, setExpandedAnswer] = useState(null); // State to track expanded answers
   const answerInput = useRef();
+  const navigate = useNavigate();
 
   // Fetch the question details
   useEffect(() => {
@@ -44,7 +46,8 @@ function QuestionAndAnswer() {
           icon: "success",
           confirmButtonText: "OK",
         }).then(() => {
-          window.location.reload();
+          navigate(0);
+          //window.location.reload();
         });
       } else {
         Swal.fire({

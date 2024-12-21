@@ -4,11 +4,13 @@ import classes from "./signUp.module.css";
 import { Link } from "react-router-dom";
 import { axiosInstance } from "../../utility/axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 function Signup({ onSwitch }) {
   const [error, setError] = useState(null); // for error message
   const [success, setSuccess] = useState(null); // for success message
   const [showPassword, setShowPassword] = useState(false); // State for showing/hiding password
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     firstName: "",
@@ -102,7 +104,9 @@ function Signup({ onSwitch }) {
             ); // Store the token in local storage
 
             // Redirect to home page
-            window.location.href = "/";
+            //window.location.href = "/";
+            navigate("/", { replace: true });
+            window.location.reload(); 
           } else {
             setError(
               loginResponse.data.msg || "Login failed. Please try again."

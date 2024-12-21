@@ -5,14 +5,18 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import { UserState } from "../../App.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const {user}=useContext(UserState);
   const userId = user?.userid;
+  const navigate = useNavigate();
 
   const handleSignOut = () => {
     localStorage.removeItem("EV-Forum-token-G3-APR2024"); //remove the auth token
-    window.location.replace("/auth"); //redirect to auth page so that user can login again
+    //window.location.replace("/auth"); //redirect to auth page so that user can login again
+    navigate("/auth", { replace: true }); // Navigate to the base route
+    window.location.reload(); 
   };
 
 
