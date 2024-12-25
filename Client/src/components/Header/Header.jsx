@@ -25,7 +25,7 @@ function Header() {
     <>
       <Navbar bg="light " variant="light" expand="md" className="px-3" style={{position:"sticky", top:"0", zIndex:"3", backgroundColor:"white", borderBottom:"1px solid #dee2e6"}}>
         <Container className={classes.header_container}>
-          <Navbar.Brand href="/">
+          <Navbar.Brand as={Link} to= "/">
             <img
               src={EvangadiLogo}
               className="d-inline-block align-top"
