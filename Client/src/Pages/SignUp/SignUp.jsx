@@ -99,7 +99,7 @@ function Signup({ onSwitch }) {
           if (loginResponse.status === 200) {
             // Store the JWT token (use localStorage, sessionStorage, or cookies as appropriate)
             localStorage.setItem(
-              "EV-Forum-token-G3-APR2024",
+              "EV-Forum-token-G3-Jun2024",
               loginResponse.data.token
             ); // Store the token in local storage
 

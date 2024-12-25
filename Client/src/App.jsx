@@ -13,7 +13,7 @@ function App() {
 
   // const getUserData = async () => {
   //   try {
-  //     const token = localStorage.getItem("EV-Forum-token-G3-APR2024"); // Get the token stored during login from local storage
+  //     const token = localStorage.getItem("EV-Forum-token-G3-Jun2024"); // Get the token stored during login from local storage
   //     if (!token) {
   //       navigate("/auth");
   //     }
@@ -30,7 +30,7 @@ function App() {
   // };
   const getUserData = async () => {
     try {
-      const token = localStorage.getItem("EV-Forum-token-G3-APR2024");
+      const token = localStorage.getItem("EV-Forum-token-G3-Jun2024");
       if (!token) {
         return navigate("/auth");
       }

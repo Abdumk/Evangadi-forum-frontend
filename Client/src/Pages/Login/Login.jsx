@@ -40,7 +40,7 @@ function Login({ onSwitch }) {
         }
       );
       // console.log(response.data)
-      localStorage.setItem("EV-Forum-token-G3-APR2024", response.data.token); // Store the token in local storage
+      localStorage.setItem("EV-Forum-token-G3-Jun2024", response.data.token); // Store the token in local storage
       //window.location.href = "/"; // This will navigate to the / page and refresh the application
       if (response.status === 200) {
         setSuccess("Login successful! Redirecting..."); 
