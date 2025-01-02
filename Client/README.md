@@ -1,4 +1,21 @@
-# React + Vite
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+## Contact
+My name is Abdurahman Mohammed, and I am a full-stack web developer. I learned at Evangadi Tech.
+If you have any questions, need help, or want to discuss work or learning opportunities related to this project, feel free to reach out to me:
+
+- **Phone:** 215-934-67-71-72
+- **Phone:** 215-912-64-96-90
+
+- **Email:** abdumk148@gmail.com
+
+I am  willing to help and collaborate on this project.
+
+## License
+
+This project is licensed under the MIT License.
 
 # Evangadi Forum
 
